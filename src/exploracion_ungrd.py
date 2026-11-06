@@ -14,19 +14,19 @@ df = pd.read_csv(ruta, low_memory=False)
 print("=== ALERTACHOCÓ AI ===")
 print("Dimensiones:", df.shape)
 
-print("\nPrimeros registros:")
+print("Primeros registros:")
 print(df.head())
 
-print("\nInformación de columnas:")
+print("Información de columnas:")
 df.info()
 
-print("\nValores nulos por columna:")
+print("Valores nulos por columna:")
 print(df.isnull().sum())
 
-print("\nFilas duplicadas:")
+print("Filas duplicadas:")
 print(df.duplicated().sum())
 
-print("\nNombres de columnas:")
+print("Nombres de columnas:")
 print(df.columns.tolist())
 
 
@@ -64,33 +64,5 @@ print("Filas duplicadas de inundaciones:")
 print(df_inundaciones.duplicated().sum())
 
 
-
-# ETAPA 3: EVALUACIÓN DE CALIDAD DEL DATASET
-
-
-print("=== CALIDAD DE DATOS: INUNDACIONES ===")
-
-# Convertir fechas para el análisis sin modificar el CSV
-fechas = pd.to_datetime(
-    df_inundaciones["FECHA"],
-    errors="coerce",
-    dayfirst=True
-)
-
-print("Fecha más antigua:", fechas.min())
-print("Fecha más reciente:", fechas.max())
-
-print("Registros por año:")
-print(fechas.dt.year.value_counts().sort_index())
-
-print("Fechas no interpretables:")
-print(fechas.isna().sum())
-
-print("Municipios diferentes:")
-print(df_inundaciones["MUNICIPIO"].nunique())
-
-print("Valores nulos en columnas principales:")
-columnas = ["FECHA", "DEPARTAMENTO", "MUNICIPIO", "EVENTO"]
-print(df_inundaciones[columnas].isnull().sum())
 
 
