@@ -63,3 +63,34 @@ print(df_inundaciones["MUNICIPIO"].value_counts())
 print("Filas duplicadas de inundaciones:")
 print(df_inundaciones.duplicated().sum())
 
+
+
+# ETAPA 3: EVALUACIÓN DE CALIDAD DEL DATASET
+
+
+print("=== CALIDAD DE DATOS: INUNDACIONES ===")
+
+# Convertir fechas para el análisis sin modificar el CSV
+fechas = pd.to_datetime(
+    df_inundaciones["FECHA"],
+    errors="coerce",
+    dayfirst=True
+)
+
+print("Fecha más antigua:", fechas.min())
+print("Fecha más reciente:", fechas.max())
+
+print("Registros por año:")
+print(fechas.dt.year.value_counts().sort_index())
+
+print("Fechas no interpretables:")
+print(fechas.isna().sum())
+
+print("Municipios diferentes:")
+print(df_inundaciones["MUNICIPIO"].nunique())
+
+print("Valores nulos en columnas principales:")
+columnas = ["FECHA", "DEPARTAMENTO", "MUNICIPIO", "EVENTO"]
+print(df_inundaciones[columnas].isnull().sum())
+
+
