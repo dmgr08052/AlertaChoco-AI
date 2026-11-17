@@ -275,7 +275,32 @@ elif pagina == "📚 Metodología y conclusiones":
         "dispone de un modelo predictivo validado."
     )
 
+    st.header("Conclusiones del estudio")
+
+    st.success(
+        "El análisis permitió identificar diferencias históricas "
+        "en las precipitaciones acumuladas entre fechas con "
+        "y sin reportes de inundación en Bojayá."
+    )
+
+    st.write(
+        "Los resultados sugieren que la precipitación acumulada "
+        "puede ser una variable relevante para estudiar las "
+        "inundaciones. Sin embargo, las 14 fechas con reportes "
+        "son insuficientes para entrenar y validar de manera "
+        "confiable un modelo predictivo de inteligencia artificial."
+    )
+
+    st.write(
+        "AlertaChoco-AI funciona actualmente como una herramienta "
+        "de análisis histórico y visualización de datos. "
+        "Para avanzar hacia modelos predictivos será necesario "
+        "ampliar los registros, incorporar niveles de los ríos "
+        "y evaluar rigurosamente la calidad de la información."
+    )
+
     st.header("Próximos pasos")
+
     st.write(
         "Ampliar las fuentes de información, evaluar la calidad "
         "de nuevos datos y continuar mejorando el dashboard."
