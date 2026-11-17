@@ -48,10 +48,53 @@ if ruta.exists():
     st.divider()
 
     st.header("Vista previa del dataset")
-    st.dataframe(df.head(20), use_container_width=True)
+    st.dataframe(df.head(20), width="stretch")
 
 else:
     st.error("No se encontró el dataset experimental de Bojayá.")
 
 st.divider()
 st.caption("AlertaChoco-AI | Proyecto de Ingeniería de Sistemas")
+
+
+# Gráficos del análisis de precipitaciones
+st.divider()
+st.header("🌧️ Patrones históricos de precipitación")
+
+st.write(
+    "Comparación exploratoria de las lluvias acumuladas "
+    "en días con y sin reportes de inundación en Bojayá."
+)
+
+carpeta_graficos = (
+    Path(__file__).resolve().parent
+    / "reports"
+    / "figures"
+)
+
+graficos = {
+    "3 días": "patrones_lluvia_3_dias.png",
+    "7 días": "patrones_lluvia_7_dias.png",
+    "15 días": "patrones_lluvia_15_dias.png"
+}
+
+periodo = st.selectbox(
+    "Selecciona el periodo de precipitación:",
+    list(graficos.keys())
+)
+
+ruta_grafico = carpeta_graficos / graficos[periodo]
+
+if ruta_grafico.exists():
+    st.image(
+        str(ruta_grafico),
+        caption=f"Análisis de precipitación acumulada de {periodo}",
+        width="stretch"
+    )
+else:
+    st.warning("No se encontró el gráfico seleccionado.")
+
+st.info(
+    "Estos gráficos muestran asociaciones históricas. "
+    "No representan un modelo predictivo validado."
+)
