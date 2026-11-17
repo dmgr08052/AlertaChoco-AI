@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Copia de seguridad local del dashboard
+app_respaldo.py
