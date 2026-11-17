@@ -1,22 +1,40 @@
+
 # 🌧️ AlertaChoco-AI
-### Sistema de análisis de inundaciones en el departamento del Chocó mediante ciencia de datos e inteligencia artificial
+
+### Sistema de análisis histórico de inundaciones en el departamento del Chocó mediante ciencia de datos
 
 **Desarrollador:** Daniel Mauricio Guerrero Rengifo  
 **Profesión:** Ingeniero de Sistemas  
-**Estado:** En desarrollo — Análisis exploratorio y construcción del panel interactivo  
-**Ubicación del estudio:** Chocó, Colombia
+**Estado:** Dashboard web publicado y análisis exploratorio desarrollado  
+**Ubicación del estudio:** Chocó, Colombia  
+
+🌐 **Aplicación web:** https://alertachoco-ai.streamlit.app/
+
+💻 **Repositorio:** https://github.com/dmgr08052/AlertaChoco-AI
 
 ---
 
 ## 📌 1. Descripción del proyecto
 
-**AlertaChoco-AI** es un proyecto de investigación y desarrollo tecnológico que busca analizar el comportamiento histórico de las inundaciones en el departamento del Chocó, Colombia, mediante herramientas de ciencia de datos, análisis estadístico y programación en Python.
+**AlertaChoco-AI** es un proyecto de investigación y desarrollo tecnológico orientado al análisis del comportamiento histórico de las inundaciones en el departamento del Chocó, Colombia.
 
-El proyecto integra información oficial de emergencias y precipitaciones con el propósito de identificar patrones asociados a eventos de inundación, evaluar la calidad de los datos y determinar la viabilidad de desarrollar modelos de aprendizaje automático.
+Utiliza herramientas de ciencia de datos, análisis estadístico y programación en Python para procesar información oficial de emergencias y precipitaciones.
 
-Actualmente se ha realizado un análisis departamental de registros históricos de inundaciones y un estudio experimental enfocado en el municipio de Bojayá, utilizando información meteorológica de las estaciones Bellavista y Opogadó.
+El proyecto busca identificar patrones asociados a eventos de inundación, evaluar la calidad de los datos y determinar la viabilidad de implementar modelos de aprendizaje automático.
 
-El propósito final es construir una herramienta interactiva que facilite la consulta, exploración e interpretación de información relacionada con las inundaciones en el Chocó.
+Actualmente cuenta con:
+
+- Análisis departamental de inundaciones históricas.
+- Estudio experimental de precipitaciones en Bojayá.
+- Procesamiento de información meteorológica de Bellavista y Opogadó.
+- Análisis de lluvias acumuladas durante 3, 7 y 15 días.
+- Evaluación exploratoria de umbrales de precipitación.
+- Evaluación de viabilidad de inteligencia artificial.
+- Dashboard interactivo publicado mediante Streamlit.
+
+La aplicación permite consultar los resultados de manera visual e interactiva.
+
+---
 
 ## 🌎 2. Planteamiento del problema
 
@@ -26,7 +44,9 @@ Las precipitaciones frecuentes, la presencia de numerosos ríos y las caracterí
 
 Aunque existen fuentes oficiales de información, los registros meteorológicos y los reportes de emergencias se encuentran en conjuntos de datos diferentes, lo que dificulta su análisis conjunto.
 
-AlertaChoco-AI busca contribuir a resolver esta dificultad mediante la integración, procesamiento y visualización de datos históricos.
+AlertaChoco-AI contribuye al estudio de esta problemática mediante la integración, procesamiento, análisis y visualización de datos históricos.
+
+---
 
 ## 🎯 3. Objetivos
 
@@ -44,6 +64,8 @@ Desarrollar un sistema de análisis de información histórica de precipitacione
 6. Realizar análisis estadísticos y visualizaciones.
 7. Evaluar la viabilidad de utilizar aprendizaje automático.
 8. Desarrollar un panel interactivo para consultar los resultados.
+
+---
 
 ## 🗂️ 4. Fuentes de información
 
@@ -63,6 +85,8 @@ Se utilizan datos históricos de precipitación de estaciones meteorológicas, i
 
 Estas fuentes permiten desarrollar análisis exploratorios de la relación temporal entre las lluvias y las inundaciones reportadas.
 
+---
+
 ## 🛠️ 5. Tecnologías utilizadas
 
 | Tecnología | Aplicación |
@@ -71,10 +95,13 @@ Estas fuentes permiten desarrollar análisis exploratorios de la relación tempo
 | Pandas | Limpieza, transformación y análisis |
 | NumPy | Operaciones numéricas |
 | Matplotlib | Visualización estadística |
+| Streamlit | Desarrollo del dashboard interactivo |
 | Git | Control de versiones |
 | GitHub | Repositorio y documentación |
 | GitHub Codespaces | Entorno de desarrollo |
-| Streamlit | Desarrollo del futuro panel interactivo |
+| Streamlit Community Cloud | Publicación de la aplicación web |
+
+---
 
 ## 🏗️ 6. Estructura del proyecto
 
@@ -95,11 +122,15 @@ AlertaChoco-AI/
 │   └── figures/
 │       └── Gráficos y visualizaciones
 │
+├── app.py
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
 Esta organización permite separar los datos originales de los resultados del procesamiento y facilita la reproducibilidad de los análisis.
+
+---
 
 ## 🔬 7. Metodología implementada
 
@@ -119,7 +150,9 @@ El desarrollo se ha organizado en las siguientes etapas:
 
 **Etapa 7. Evaluación de IA:** identificación de limitaciones relacionadas con el número de eventos, calidad de etiquetas y disponibilidad de variables.
 
-**Etapa 8. Visualización interactiva:** desarrollo previsto del panel web con Streamlit.
+**Etapa 8. Visualización interactiva:** desarrollo y publicación del dashboard web con Streamlit.
+
+---
 
 ## 📊 8. Resultados del análisis departamental
 
@@ -135,6 +168,8 @@ Durante el procesamiento de los registros de inundaciones del Chocó se obtuvier
 Estos resultados constituyen una base para estudiar la distribución territorial y temporal de las inundaciones reportadas.
 
 Las combinaciones municipio-fecha no deben interpretarse automáticamente como eventos independientes.
+
+---
 
 ## 🌧️ 9. Análisis experimental de Bojayá
 
@@ -154,6 +189,8 @@ Bellavista presentó mayor continuidad de datos para las variables analizadas.
 
 Por esta razón se seleccionó como estación principal para el conjunto de datos experimental inicial, sin asumir que representa todas las condiciones meteorológicas del municipio.
 
+---
+
 ## 📈 10. Dataset experimental
 
 Se construyó el archivo:
@@ -171,13 +208,15 @@ Este conjunto contiene:
 
 ### Variables principales
 
-- `Fecha`: fecha de observación.
+- `FECHA`: fecha de observación.
 - `LLUVIA_PREVIA_3_DIAS`: precipitación acumulada durante los tres días anteriores.
 - `LLUVIA_PREVIA_7_DIAS`: precipitación acumulada durante los siete días anteriores.
 - `LLUVIA_PREVIA_15_DIAS`: precipitación acumulada durante los quince días anteriores.
 - `INUNDACION_REPORTADA`: indicador de existencia de reporte histórico de inundación.
 
 El valor cero de esta última variable indica ausencia de reporte en el conjunto de datos, no ausencia verificada de inundación.
+
+---
 
 ## 📉 11. Hallazgos estadísticos
 
@@ -191,7 +230,7 @@ Para la lluvia acumulada de 15 días se obtuvieron:
 | Percentil 75 | 293 mm | 386 mm |
 | Percentil 90 | 374 mm | 465,8 mm |
 
-La diferencia entre medianas fue de 92 mm.
+La diferencia entre medianas fue de **92 mm**.
 
 Estos resultados sugieren una asociación estadística que merece ser investigada, pero no demuestran causalidad ni capacidad predictiva.
 
@@ -203,17 +242,35 @@ Por ejemplo, un umbral de 295 mm acumulados durante 15 días fue superado en 8 d
 
 Sin embargo, también se superó en numerosos días sin reporte, por lo que no puede considerarse una alerta validada.
 
+---
+
 ## 📊 12. Visualizaciones generadas
 
 Se desarrollaron gráficos comparativos de precipitación acumulada para periodos de 3, 7 y 15 días.
 
+### Precipitación acumulada de 3 días
+
 ![Precipitación previa de 3 días](reports/figures/patrones_lluvia_3_dias.png)
+
+### Precipitación acumulada de 7 días
 
 ![Precipitación previa de 7 días](reports/figures/patrones_lluvia_7_dias.png)
 
+### Precipitación acumulada de 15 días
+
 ![Precipitación previa de 15 días](reports/figures/patrones_lluvia_15_dias.png)
 
-Estas visualizaciones facilitan la interpretación de los resultados y constituyen una base para el futuro panel interactivo.
+### Análisis histórico de inundaciones en el Chocó
+
+![Inundaciones por año](reports/figures/inundaciones_por_anio.png)
+
+![Inundaciones por municipio](reports/figures/inundaciones_por_municipio.png)
+
+![Personas afectadas por año](reports/figures/personas_afectadas_por_anio.png)
+
+Estas visualizaciones se encuentran integradas en el dashboard de Streamlit.
+
+---
 
 ## 🧠 13. Evaluación de viabilidad de inteligencia artificial
 
@@ -232,26 +289,33 @@ Actualmente no se considera apropiado presentar un modelo supervisado como un si
 
 La prioridad es ampliar y validar la información antes de desarrollar modelos destinados a identificar riesgos futuros.
 
-Mientras tanto, el proyecto continuará como una herramienta de análisis histórico y exploratorio.
+Mientras tanto, AlertaChoco-AI funciona como una herramienta de análisis histórico y exploratorio.
 
-## 💻 14. Ejecución de los análisis
+---
+
+## 💻 14. Ejecución del proyecto
 
 ### Requisitos
 
 - Python 3.
-- Pandas.
-- NumPy.
-- Matplotlib.
+- Git.
+- Dependencias indicadas en `requirements.txt`.
 
 ### Instalación de dependencias
 
 Desde la carpeta principal del proyecto:
 
 ```bash
-python3 -m pip install pandas numpy matplotlib streamlit
+python3 -m pip install -r requirements.txt
 ```
 
-### Ejemplos de ejecución
+### Ejecutar el dashboard localmente
+
+```bash
+python3 -m streamlit run app.py
+```
+
+### Ejemplos de ejecución de los análisis
 
 Validar datos de Bellavista:
 
@@ -303,37 +367,109 @@ python3 src/evaluar_viabilidad_ia.py
 
 **Nota:** algunos programas dependen de archivos procesados previamente. Para reproducir el proyecto desde cero es necesario ejecutar primero las etapas de preparación e integración correspondientes.
 
-## 🚀 15. Próximas etapas
+---
 
-El desarrollo continuará con:
+## 🌐 15. Aplicación web publicada
 
-1. Construcción del panel interactivo utilizando Streamlit.
-2. Integración de gráficos y estadísticas.
-3. Visualización de precipitaciones y registros históricos.
-4. Ampliación de datos meteorológicos a otros municipios.
-5. Incorporación de información hidrológica adicional.
-6. Revisión de la calidad de las etiquetas históricas.
-7. Evaluación de modelos experimentales cuando existan datos suficientes.
-8. Documentación técnica y pruebas finales.
+AlertaChoco-AI cuenta con un dashboard interactivo desarrollado con Python y Streamlit, publicado mediante Streamlit Community Cloud.
 
-## ⚠️ 16. Limitaciones y uso responsable
+### Acceder a la aplicación
 
-AlertaChoco-AI es un proyecto académico y tecnológico en desarrollo.
+**https://alertachoco-ai.streamlit.app/**
 
-Sus resultados son exploratorios y no constituyen pronósticos oficiales, alertas tempranas validadas ni recomendaciones operativas para situaciones de emergencia.
+### Funcionalidades implementadas
+
+La aplicación dispone de un menú lateral con cuatro secciones principales:
+
+**🏠 Inicio**
+
+Presenta la descripción general del proyecto, sus objetivos y los componentes desarrollados.
+
+**📊 Inundaciones en el Chocó**
+
+Permite visualizar gráficos históricos de:
+
+- Inundaciones reportadas por año.
+- Inundaciones reportadas por municipio.
+- Personas afectadas reportadas por año.
+
+**🌧️ Precipitaciones en Bojayá**
+
+Incluye:
+
+- Indicadores del estudio experimental.
+- Visualización de información meteorológica.
+- Comparación de precipitaciones acumuladas en 3, 7 y 15 días.
+- Gráficos estadísticos.
+- Interpretación de resultados.
+
+**📚 Metodología y conclusiones**
+
+Presenta:
+
+- Fuentes de información utilizadas.
+- Metodología aplicada.
+- Resultados cuantitativos.
+- Hallazgos preliminares.
+- Limitaciones.
+- Conclusiones y próximos pasos.
+
+### Estado de publicación
+
+La aplicación se encuentra publicada y accesible mediante el enlace público.
+
+Su funcionamiento está orientado a la exploración de información histórica y no a la emisión de alertas operativas.
+
+---
+
+## 🚀 16. Próximas etapas
+
+Después de implementar y publicar el dashboard, las siguientes actividades permitirán continuar mejorando el proyecto:
+
+1. Ampliar los datos meteorológicos a otros municipios del Chocó.
+2. Incorporar información hidrológica adicional, especialmente niveles de los ríos.
+3. Revisar y mejorar la calidad de las etiquetas históricas de inundación.
+4. Ampliar el análisis comparativo entre estaciones meteorológicas.
+5. Incorporar nuevas visualizaciones y filtros interactivos.
+6. Fortalecer las pruebas y la documentación técnica.
+7. Evaluar modelos experimentales de aprendizaje automático cuando existan datos suficientes y adecuados.
+8. Mantener y actualizar la aplicación web.
+
+---
+
+## ⚠️ 17. Limitaciones y uso responsable
+
+AlertaChoco-AI es un proyecto académico y tecnológico de ciencia de datos.
+
+Sus resultados son exploratorios y no constituyen:
+
+- Pronósticos meteorológicos oficiales.
+- Alertas tempranas validadas.
+- Predicciones confiables de inundaciones.
+- Recomendaciones operativas para situaciones de emergencia.
+
+La ausencia de un reporte histórico no garantiza que no haya ocurrido una inundación.
 
 Cualquier implementación predictiva futura requerirá evaluaciones adicionales de calidad, desempeño y confiabilidad.
 
-## 👨‍💻 17. Autor
+---
+
+## 👨‍💻 18. Autor
 
 **Daniel Mauricio Guerrero Rengifo**  
 Ingeniero de Sistemas
 
-**Proyecto:** AlertaChoco-AI  
-**Área:** Ciencia de datos, análisis estadístico e inteligencia artificial aplicada a inundaciones.
+**Proyecto:** AlertaChoco-AI
 
-**Repositorio:** https://github.com/dmgr08052/AlertaChoco-AI
+**Área:** Ciencia de datos, análisis estadístico e inteligencia artificial aplicada al estudio de inundaciones.
+
+**Repositorio:**  
+https://github.com/dmgr08052/AlertaChoco-AI
+
+**Aplicación web:**  
+https://alertachoco-ai.streamlit.app/
 
 ---
 
-*AlertaChoco-AI: transformando datos históricos en conocimiento para comprender mejor los riesgos de inundación en el Chocó.*
+**AlertaChoco-AI: transformando datos históricos en conocimiento para comprender mejor los riesgos de inundación en el Chocó.**
+
