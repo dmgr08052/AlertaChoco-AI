@@ -184,6 +184,34 @@ elif pagina == "🌧️ Precipitaciones en Bojayá":
         "No representan un modelo predictivo validado."
     )
 
+
+    st.divider()
+    st.subheader("📖 Interpretación de los resultados")
+
+    if periodo == "15 días":
+        st.write(
+            "La mediana de precipitación acumulada fue de "
+            "307 mm en fechas con inundaciones reportadas, "
+            "frente a 215 mm en fechas sin reporte. "
+            "Esta diferencia de 92 mm muestra una asociación "
+            "histórica, pero no demuestra causalidad ni "
+            "permite realizar predicciones confiables."
+        )
+
+    elif periodo == "7 días":
+        st.write(
+            "Se comparan las lluvias acumuladas durante "
+            "siete días en fechas con y sin reportes de "
+            "inundación. Los resultados son exploratorios."
+        )
+
+    elif periodo == "3 días":
+        st.write(
+            "Se analizan las precipitaciones acumuladas "
+            "durante tres días para identificar diferencias "
+            "históricas entre ambos grupos."
+        )
+
 # --------------------------------------------------
 # PÁGINA 4: METODOLOGÍA Y CONCLUSIONES
 # --------------------------------------------------
