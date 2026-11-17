@@ -98,3 +98,41 @@ st.info(
     "Estos gráficos muestran asociaciones históricas. "
     "No representan un modelo predictivo validado."
 )
+
+
+# Análisis histórico de inundaciones en el Chocó
+st.divider()
+st.header("📊 Inundaciones históricas en el Chocó")
+
+st.write(
+    "Visualización exploratoria de los registros históricos "
+    "de inundaciones reportadas en el departamento del Chocó."
+)
+
+graficos_choco = {
+    "Inundaciones por año": "inundaciones_por_anio.png",
+    "Inundaciones por municipio": "inundaciones_por_municipio.png",
+    "Personas afectadas por año": "personas_afectadas_por_anio.png"
+}
+
+tipo_analisis = st.selectbox(
+    "Selecciona el análisis histórico:",
+    list(graficos_choco.keys())
+)
+
+ruta_historica = carpeta_graficos / graficos_choco[tipo_analisis]
+
+if ruta_historica.exists():
+    st.image(
+        str(ruta_historica),
+        caption=tipo_analisis,
+        width="stretch"
+    )
+else:
+    st.warning("No se encontró el gráfico histórico seleccionado.")
+
+st.caption(
+    "Fuente: registros históricos de emergencias de la UNGRD. "
+    "Los resultados dependen de la cobertura y calidad de los datos."
+)
+
