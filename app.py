@@ -245,6 +245,27 @@ elif pagina == "📚 Metodología y conclusiones":
         "reportes de inundación y fechas sin reportes."
     )
 
+    st.subheader("Resultados cuantitativos en Bojayá")
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric("Días analizados", "2.495")
+    col2.metric("Fechas con inundación reportada", "14")
+    col3.metric("Fechas sin reporte", "2.481")
+
+    st.write(
+        "En el análisis de precipitación acumulada de 15 días, "
+        "la mediana fue de 307 mm en fechas con inundaciones "
+        "reportadas y de 215 mm en fechas sin reporte. "
+        "La diferencia observada fue de 92 mm."
+    )
+
+    st.caption(
+        "Estos resultados corresponden al conjunto de datos "
+        "experimental de Bojayá. La ausencia de un reporte "
+        "no confirma que no haya ocurrido una inundación."
+    )
+
     st.header("Limitaciones")
     st.warning(
         "La cantidad de fechas con inundación reportada es reducida. "
